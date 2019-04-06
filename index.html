@@ -4,6 +4,36 @@
 		<title>Blockly for house</title>
 	</head>
 	<body>
-    <h1>Hi!</h1>
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/msg/js/en.js"></script>
+        <script src="blockly/blocks/myblocks.js"></script>
+        <script src="blockly/python_compressed.js"></script>
+        <script src="blockly/generators/python/myblocks.js"></script>
+
+        <h1>Hi!</h1>
+        <textarea id='code_output'>#here will be code!</textarea>
+        <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+        <xml id="toolbox" style="display: none">
+            <block type="controls_if"></block>
+            <block type="controls_repeat_ext"></block>
+            <block type="logic_compare"></block>
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+            <block type="text"></block>
+            <block type="text_print"></block>
+            <block type="door"></block>
+            <block type="open_door"></block>
+            <block type="close_door"></block>
+        </xml>
+        <script>
+        var workspace = Blockly.inject('blocklyDiv',
+            {toolbox: document.getElementById('toolbox')});
+        function generate(event){
+            var code = Blockly.Python.workspaceToCode(workspace);
+            document.getElementById('code_output').value = code;
+        }
+        workspace.addChangeListener(generate);
+        </script>
 	</body>
 </html>
