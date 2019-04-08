@@ -12,11 +12,11 @@
     <script src="../../blockly/python_compressed.js"></script>
     <script src="blocks/myblocks.js"></script>
     <script src="generators/python/myblocks.js"></script>
+    
 
     <h1>Hi!</h1>
     <h3>In this version:</h3>
-    <p>TO DO: add blockdefenitions with json</p>
-    <p>Получаю xml</p>
+    <p>Получаю xml и из xml в блоки</p>
     <p><a href="../../index.html">Back</a></p>
     <table>
         <tr>
@@ -145,12 +145,12 @@
                     <script>
                         var workspace = Blockly.inject('blocklyDiv',
                             { toolbox: document.getElementById('toolbox') });
-                       
+                            
                     </script>
             </td>
             <td>
-                    <h5>Code output</h5>
-                    <textarea id='code_output' readonly style="height: 480px; width: 600px;">#here will be code!</textarea>
+                    <h5>Code output / Xml input</h5>
+                    <textarea id='code_output' style="height: 480px; width: 600px;">#here will be code!</textarea>
                 
                 
                     <script>
@@ -166,8 +166,14 @@
                         var xml = Blockly.Xml.workspaceToDom(workspace);
                         document.getElementById('code_output').value = Blockly.Xml.domToPrettyText(xml);;
                     }
+                    function from_xml(){
+                       console.log('inside from_xml');
+                       var xml = document.getElementById("code_output").value;
+                       Blockly.Xml.appendDomToWorkspace(Blockly.Xml.textToDom(xml), workspace);  
+                    }
                     </script>
                     <button id="to_xml_button" onclick="get_xml()">To XML</button>
+                    <button id='from_xml_button' onclick="from_xml()">From XML</button>
             </td>
         </tr>
     </table>
