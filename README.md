@@ -23,7 +23,7 @@
 - /version/{version number}/generators/python/{category}
 5. Для каждой новой подкатетории создайте файлы
 - /version/{version number}/blocks/{category}/{subcategory}.js с описанием блоков на JS (not JSON!)
-- /version/{version number}/generators/python/{category}/{subcategory}.js with translation rules
+- /version/{version number}/generators/python/{category}/{subcategory}.js с правилами генерации кода
 6. Экспортируйте библиотеку блоков в /version/{version number}/library.xml
 
 
