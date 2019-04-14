@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blockly for house Demo#3</title>
+</head>
+
+<body>
+    <!--Import blockly library and standard blocks-->
+    <script src="../../../blockly/blockly_compressed.js"></script>
+    <script src="../../../blockly/blocks_compressed.js"></script>
+    <script src="../../../blockly/msg/js/en.js"></script>
+    <script src="../../../blockly/python_compressed.js"></script>
+    <!--Import our blocks-->
+    <script src="../blocks/Actuators/door.js"></script>
+    <script src="../blocks/Actuators/lamp.js"></script>
+    <script src="../blocks/Sensors/illuminance.js"></script>
+    <script src="../blocks/Sensors/humidity.js"></script>
+    <script src="../blocks/Sensors/temperature.js"></script>
+    <!--Import generation from our blocks-->
+    <script src="../generators/python/Actuators/door.js"></script>
+    <script src="../generators/python/Actuators/lamp.js"></script>
+    <script src="../generators/python/Sensors/illuminance.js"></script>
+    <script src="../generators/python/Sensors/humidity.js"></script>
+    <script src="../generators/python/Sensors/temperature.js"></script>
+
+
+    <h1>Blockly for house Demo#3</h1>
+    <h3>Открытие двери при высокой температуре: Использование функций</h3>
+    <p><a href="../../../index.html">Back</a></p>
+
+    <textarea id="xml_demo" style="display:none;">
+        <xml xmlns="http://www.w3.org/1999/xhtml">
+            <variables>
+              <variable type="" id="6]VcN#y/zUyVqhNh9OcI">door_name</variable>
+              <variable type="" id="M(c4}rZRJM2qTc86^C~m">sensor_name</variable>
+              <variable type="" id="0nI!v[Vrit-[PWet@Pbr">temperature</variable>
+            </variables>
+            <block type="procedures_defreturn" id="SbZRzYEjdV5UrST0)a]4" x="94" y="67">
+              <mutation statements="false">
+                <arg name="sensor_name" varid="M(c4}rZRJM2qTc86^C~m"></arg>
+              </mutation>
+              <field name="NAME">get_sensor_temperature</field>
+              <comment pinned="false" h="80" w="160">Describe this function...</comment>
+              <value name="RETURN">
+                <block type="tem_get" id="P#3y5)QfIE;RN%*~egh#">
+                  <value name="tem_sensor">
+                    <block type="tem_sensor" id="[7PN{p*u*y|hQjh[vHi~">
+                      <value name="NAME">
+                        <block type="variables_get" id="q}39@sY8U1X4S2W?~zz@">
+                          <field name="VAR" id="M(c4}rZRJM2qTc86^C~m" variabletype="">sensor_name</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </value>
+            </block>
+            <block type="procedures_defnoreturn" id=";WLNr[`k]-QR2GEhc94+" x="94" y="135">
+              <mutation>
+                <arg name="door_name" varid="6]VcN#y/zUyVqhNh9OcI"></arg>
+                <arg name="sensor_name" varid="M(c4}rZRJM2qTc86^C~m"></arg>
+                <arg name="temperature" varid="0nI!v[Vrit-[PWet@Pbr"></arg>
+              </mutation>
+              <field name="NAME">control_door_by_temperature</field>
+              <comment pinned="false" h="80" w="160">Describe this function...</comment>
+              <statement name="STACK">
+                <block type="controls_if" id="Y9,$G?3L3%]=nxs_BT`v">
+                  <value name="IF0">
+                    <block type="logic_compare" id="5SUm,0HNHuzQM!cQy5G=">
+                      <field name="OP">GT</field>
+                      <value name="A">
+                        <block type="procedures_callreturn" id="3YmW2)`QH*G1c~w#.kYX">
+                          <mutation name="get_sensor_temperature">
+                            <arg name="sensor_name"></arg>
+                          </mutation>
+                          <value name="ARG0">
+                            <block type="variables_get" id="P{E6lFq][YZsXKu?k|g,">
+                              <field name="VAR" id="M(c4}rZRJM2qTc86^C~m" variabletype="">sensor_name</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <block type="variables_get" id="ndbW?@-lDO[ZW`I/RFQ6">
+                          <field name="VAR" id="0nI!v[Vrit-[PWet@Pbr" variabletype="">temperature</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="open_door" id=".=*bZ/x+t}uVS{OBy_FL">
+                      <value name="door">
+                        <block type="door" id="UgLIOy_WkTVz0wgV,JO8">
+                          <value name="NAME">
+                            <block type="variables_get" id="b!8g1Sx+uglmf_gyk/nr">
+                              <field name="VAR" id="6]VcN#y/zUyVqhNh9OcI" variabletype="">door_name</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </statement>
+            </block>
+            <block type="procedures_callnoreturn" id="2?*6/$/jC|LK{%)ts-u/" x="96" y="316">
+              <mutation name="control_door_by_temperature">
+                <arg name="door_name"></arg>
+                <arg name="sensor_name"></arg>
+                <arg name="temperature"></arg>
+              </mutation>
+              <value name="ARG0">
+                <block type="text" id=";[8E2zbd{QjSE$;@brk?">
+                  <field name="TEXT">door1</field>
+                </block>
+              </value>
+              <value name="ARG1">
+                <block type="text" id="s7ikR6b]gbA1nE+IgC-!">
+                  <field name="TEXT">sensor1</field>
+                </block>
+              </value>
+              <value name="ARG2">
+                <block type="temperature" id="?dCkBpU,(yeXxMro[oTb">
+                  <field name="Unit">Celsius</field>
+                  <value name="Value">
+                    <block type="math_number" id="9Zg:z-TX[*SB*ji;$BC*">
+                      <field name="NUM">25</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="procedures_callnoreturn" id="I.XgR/tpeCQ;vop3iuMu">
+                  <mutation name="control_door_by_temperature">
+                    <arg name="door_name"></arg>
+                    <arg name="sensor_name"></arg>
+                    <arg name="temperature"></arg>
+                  </mutation>
+                  <value name="ARG0">
+                    <block type="text" id="y:glJ1zsVnB2PCZ`/jJ6">
+                      <field name="TEXT">door2</field>
+                    </block>
+                  </value>
+                  <value name="ARG1">
+                    <block type="text" id="VbsS`b(!$_`]aB]c~ykj">
+                      <field name="TEXT">sensor2</field>
+                    </block>
+                  </value>
+                  <value name="ARG2">
+                    <block type="temperature" id="|[/Yd?:+G|r5$[:{CjZT">
+                      <field name="Unit">Celsius</field>
+                      <value name="Value">
+                        <block type="math_number" id="}M!V=dJr@lPT/vN1EbBx">
+                          <field name="NUM">27</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </xml>
+    </textarea>
+
+    <div id="blocklyDiv" style="height: 480px; width: 1200px;"></div>
+    <xml id="toolbox" style="display: none">
+        <category name="Logic" colour="%{BKY_LOGIC_HUE}">
+            <category name="If">
+                <block type="controls_if"></block>
+                <block type="controls_if">
+                    <mutation else="1"></mutation>
+                </block>
+                <block type="controls_if">
+                    <mutation elseif="1" else="1"></mutation>
+                </block>
+            </category>
+            <category name="Boolean" colour="%{BKY_LOGIC_HUE}">
+                <block type="logic_compare"></block>
+                <block type="logic_operation"></block>
+                <block type="logic_negate"></block>
+                <block type="logic_boolean"></block>
+                <block type="logic_null"></block>
+                <block type="logic_ternary"></block>
+            </category>
+        </category>
+        <category name="Loops" colour="%{BKY_LOOPS_HUE}">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+            </block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+                <field name="VAR">i</field>
+                <value name="FROM">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+                <value name="BY">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+            </block>
+            <block type="controls_forEach"></block>
+            <block type="controls_flow_statements"></block>
+        </category>
+        <category name="Math" colour="%{BKY_MATH_HUE}">
+            <block type="math_number">
+                <field name="NUM">123</field>
+            </block>
+            <block type="math_arithmetic"></block>
+            <block type="math_single"></block>
+            <block type="math_trig"></block>
+            <block type="math_constant"></block>
+            <block type="math_number_property"></block>
+            <block type="math_round"></block>
+            <block type="math_on_list"></block>
+            <block type="math_modulo"></block>
+            <block type="math_constrain">
+                <value name="LOW">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="HIGH">
+                    <block type="math_number">
+                        <field name="NUM">100</field>
+                    </block>
+                </value>
+            </block>
+            <block type="math_random_int">
+                <value name="FROM">
+                    <block type="math_number">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="math_number">
+                        <field name="NUM">100</field>
+                    </block>
+                </value>
+            </block>
+            <block type="math_random_float"></block>
+            <block type="math_atan2"></block>
+        </category>
+        <category name="Lists" colour="%{BKY_LISTS_HUE}">
+            <block type="lists_create_empty"></block>
+            <block type="lists_create_with"></block>
+            <block type="lists_repeat">
+                <value name="NUM">
+                    <block type="math_number">
+                        <field name="NUM">5</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_isEmpty"></block>
+            <block type="lists_indexOf"></block>
+            <block type="lists_getIndex"></block>
+            <block type="lists_setIndex"></block>
+        </category>
+        <sep></sep>
+        <category name="Text" colour="%{BKY_TEXTS_HUE}">
+            <block type="text"></block>
+            <block type="text_length"></block>
+            <block type="text_print"></block>
+        </category>
+        <sep></sep>
+        <category name="Actuators" colour=110>
+            <category name="Door" colour=130>
+                <block type="door"></block>
+                <block type="open_door"></block>
+                <block type="close_door"></block>
+                <block type="door_is_open"></block>
+            </category>
+            <sep></sep>
+            <category name="Lamp">
+                <block type="lamp"></block>
+                <block type="off_lamp"></block>
+                <block type="on_lamp"></block>
+                <block type="lamp_is_on"></block>
+            </category>
+            <sep></sep>
+        </category>
+        <sep></sep>
+        <category name="Sensors" colour=170>
+            <category name="Temperature">
+                <block type="tem_sensor"></block>
+                <block type="tem_get"></block>
+                <block type="temperature"></block>
+            </category>
+            <category name="Humidity">
+                <block type="hum_sensor"></block>
+                <block type="hum_get"></block>
+                <block type="humidity"></block>
+            </category>
+            <category name="Illuminance">
+                <block type="il_sensor"></block>
+                <block type="il_get"></block>
+                <block type="illuminance"></block>
+            </category>
+        </category>
+        <sep></sep>
+        <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+        <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+    </xml>
+    <script>
+        var workspace = Blockly.inject('blocklyDiv',
+            { toolbox: document.getElementById('toolbox') });
+
+    </script>
+    <h5>Code output / Xml input</h5>
+    <textarea id='code_output' style="height: 480px; width: 1200px;">#here will be code!</textarea>
+
+
+    <script>
+        function generate(event) {
+            var code = Blockly.Python.workspaceToCode(workspace);
+            document.getElementById('code_output').value = code;
+        }
+        workspace.addChangeListener(generate);
+    </script>
+    <script>
+        function get_xml() {
+            console.log('inside get_xml');
+            var xml = Blockly.Xml.workspaceToDom(workspace);
+            document.getElementById('code_output').value = Blockly.Xml.domToPrettyText(xml);;
+        }
+        function from_xml() {
+            console.log('inside from_xml');
+            var xml = document.getElementById("code_output").value;
+            Blockly.Xml.appendDomToWorkspace(Blockly.Xml.textToDom(xml), workspace);
+        }
+        var xml = document.getElementById('xml_demo').value;
+        Blockly.Xml.appendDomToWorkspace(Blockly.Xml.textToDom(xml), workspace);
+    </script>
+    <button id="to_xml_button" onclick="get_xml()">To XML</button>
+    <button id='from_xml_button' onclick="from_xml()">From XML</button>
+
+</body>
+
+</html>
