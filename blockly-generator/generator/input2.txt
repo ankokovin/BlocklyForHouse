@@ -1,0 +1,17 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="frB!sNEn$tS%=m-y[_Z{">a</variable>
+  </variables>
+  <block type="variables_set" id="9`.@0WyF.]Qr7%K({7.r" x="151" y="91">
+    <field name="VAR" id="frB!sNEn$tS%=m-y[_Z{" variabletype="">a</field>
+    <value name="VALUE">
+      <block type="door" id="*M6e3__Lf)LkzVc^y^lm">
+        <value name="NAME">
+          <block type="text" id="V1LDT209,$b1At-cBC$1">
+            <field name="TEXT">b</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

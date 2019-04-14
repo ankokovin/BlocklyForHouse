@@ -1,0 +1,13 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="any" id="[;|Mdam*k2w!5!1oL4AZ">a</variable>
+  </variables>
+  <block type="variables_set" id="Wr;`ekL_MmLtIkD^1XsB" x="45" y="58">
+    <field name="VAR" id="[;|Mdam*k2w!5!1oL4AZ" variabletype="any">a</field>
+    <value name="VALUE">
+      <block type="math_number" id=",cSWHALjH=iS/D}Ek@2u">
+        <field name="NUM">123</field>
+      </block>
+    </value>
+  </block>
+</xml>
