@@ -1,3 +1,4 @@
+module.exports = function(Blockly) {
 Blockly.Blocks['tem_sensor'] = {
     init: function() {
       this.appendValueInput("NAME")
@@ -34,3 +35,4 @@ Blockly.Blocks['tem_sensor'] = {
    this.setHelpUrl("");
     }
   };
+}

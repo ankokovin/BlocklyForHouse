@@ -1,8 +1,6 @@
 var Blockly = require('node-blockly');
 
-require('./blocks/Actuators/door')(Blockly)
-
-require('./generators/python/Actuators/door')(Blockly)
+require('./myblockly')(Blockly)
 
 const fs = require('fs');
 filename = 'input.txt';

@@ -1,3 +1,4 @@
+module.exports = function(Blockly) {
 Blockly.Blocks['humidity'] = {
     init: function() {
       this.appendDummyInput()
@@ -34,3 +35,4 @@ Blockly.Blocks['humidity'] = {
    this.setHelpUrl("");
     }
   };
+}
