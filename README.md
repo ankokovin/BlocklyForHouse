@@ -27,6 +27,7 @@
 6. Экспортируйте библиотеку блоков в /version/{version number}/library.xml
 #### Для отображения блоков на странице 
 7. Откройте /version/{version number}/index.html
+8. Добавьте элементы <script>, указывающие на добавленные в (5) файлы
 8. [Измените xml элемент с id="toolbox"](https://developers.google.com/blockly/guides/configure/web/toolbox). 
 
 
