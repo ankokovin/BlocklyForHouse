@@ -18,6 +18,7 @@
     <script src="blocks/Sensors/illuminance.js"></script>
     <script src="blocks/Sensors/humidity.js"></script>
     <script src="blocks/Sensors/temperature.js"></script>
+    <script src="blocks/test/test.js"></script>
     <!--Import generation from our blocks-->
     <script src="generators/python/base.js"></script>
     <script src="generators/python/Actuators/door.js"></script>
@@ -25,7 +26,7 @@
     <script src="generators/python/Sensors/illuminance.js"></script>
     <script src="generators/python/Sensors/humidity.js"></script>
     <script src="generators/python/Sensors/temperature.js"></script>
-
+    <script src="generators/python/test/test.js"></script>
 
     <h1>Blockly for house</h1>
     <h3>In this version:</h3>
@@ -197,6 +198,10 @@
         <sep></sep>
         <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
         <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+        <sep></sep>
+        <category name="Test" colour=100>
+                <block type="test"></block>
+            </category>
     </xml>
     <script>
         var workspace = Blockly.inject('blocklyDiv',
