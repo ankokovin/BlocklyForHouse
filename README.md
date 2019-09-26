@@ -25,7 +25,9 @@
 - /version/{version number}/blocks/{category}/{subcategory}.js с описанием блоков на JS (not JSON!)
 - /version/{version number}/generators/python/{category}/{subcategory}.js с правилами генерации кода
 6. Экспортируйте библиотеку блоков в /version/{version number}/library.xml
-
+#### Для отображения блоков на странице 
+7. Откройте /version/{version number}/index.html
+8. [Измените xml элемент с id="toolbox"](https://developers.google.com/blockly/guides/configure/web/toolbox). 
 
 
 # BlocklyForHouse En
