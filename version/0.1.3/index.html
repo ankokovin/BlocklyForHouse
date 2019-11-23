@@ -13,18 +13,10 @@
     <script src="../../blockly/python_compressed.js"></script>
     <!--Import our blocks-->
     <script src="blocks/base.js"></script>
-    <script src="blocks/Actuators/door.js"></script>
-    <script src="blocks/Actuators/lamp.js"></script>
-    <script src="blocks/Sensors/illuminance.js"></script>
-    <script src="blocks/Sensors/humidity.js"></script>
-    <script src="blocks/Sensors/temperature.js"></script>
+    <script src="blocks/IO/io.js"></script>
     <!--Import generation from our blocks-->
     <script src="generators/python/base.js"></script>
-    <script src="generators/python/Actuators/door.js"></script>
-    <script src="generators/python/Actuators/lamp.js"></script>
-    <script src="generators/python/Sensors/illuminance.js"></script>
-    <script src="generators/python/Sensors/humidity.js"></script>
-    <script src="generators/python/Sensors/temperature.js"></script>
+    <script src="generators/python/IO/io.js"></script>
 
 
     <h1>Blockly for house</h1>
@@ -160,41 +152,9 @@
             <block type="text_print"></block>
         </category>
         <sep></sep>
-        <category name="Actuators" colour=110>
-            <category name="Door" colour=130>
-                <block type="door"></block>
-                <block type="open_door"></block>
-                <block type="close_door"></block>
-                <block type="door_is_open"></block>
-				<block type="input"></block>
-<block type="output"></block>
-            </category>
-            <sep></sep>
-            <category name="Lamp">
-                <block type="lamp"></block>
-                <block type="off_lamp"></block>
-                <block type="on_lamp"></block>
-                <block type="lamp_is_on"></block>
-            </category>
-            <sep></sep>
-        </category>
-        <sep></sep>
-        <category name="Sensors" colour=170>
-            <category name="Temperature">
-                <block type="tem_sensor"></block>
-                <block type="tem_get"></block>
-                <block type="temperature"></block>
-            </category>
-            <category name="Humidity">
-                <block type="hum_sensor"></block>
-                <block type="hum_get"></block>
-                <block type="humidity"></block>
-            </category>
-            <category name="Illuminance">
-                <block type="il_sensor"></block>
-                <block type="il_get"></block>
-                <block type="illuminance"></block>
-            </category>
+        <category name="IO">
+            <block type="input"></block>
+            <block type="output"></block>
         </category>
         <sep></sep>
         <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
